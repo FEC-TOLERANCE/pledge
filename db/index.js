@@ -50,6 +50,10 @@ const emptyProjectOwners = () => {
   return ProjectOwner.deleteMany({});
 }
 
+const fetchProjectOwner = (itemId) => {
+  return ProjectOwner.findOne({projects: itemId});
+}
+
 const addPledgeOption = (obj) => {
   let newPledgeOptions = new PledgeOptions({
     itemId: obj.itemId,
@@ -66,9 +70,15 @@ const emptyPledgeOptions = () => {
   return PledgeOptions.deleteMany({});
 }
 
+const fetchPledgeOptions = (itemId) => {
+  return PledgeOptions.findOne({itemId: itemId});
+}
+
 module.exports = {
   addProjectOwner,
   emptyProjectOwners,
+  fetchProjectOwner,
   addPledgeOption,
-  emptyPledgeOptions
+  emptyPledgeOptions,
+  fetchPledgeOptions
 }
