@@ -39,11 +39,9 @@ const addProjectOwner = (obj) => {
     backed: obj.backed,
     aboutMe: obj.aboutMe,
     projects: obj.projects
-  })
-  .save()
-  .catch((err) => {
-    console.log('Error with saving project owner', err);
   });
+
+  return newOwner.save();
 }
 
 const emptyProjectOwners = () => {

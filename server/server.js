@@ -8,20 +8,40 @@ app.use(express.static('client/dist'));
 app.get('/project-owner/:itemId', (req, res) => {
   db.fetchProjectOwner(req.params.itemId)
     .then((owner) => {
+      if (!owner) {
+        throw 'does not exist';
+      }
+
       res.json(owner);
     })
     .catch((err) => {
-      console.log('Error with fetching project owner', err);
+      if (err === 'does not exist') {
+        res.status(400).json('Project does not exist');
+      } else if (typeof req.params.itemId !== 'number') {
+        res.status(400).json('Invalid project id');
+      } else {
+        res.status(500).json(err);
+      }
     });
 });
 
 app.get('/pledge-options/:itemId', (req, res) => {
   db.fetchPledgeOptions(req.params.itemId)
     .then((options) => {
+      if (!options) {
+        throw 'does not exist';
+      }
+
       res.json(options);
     })
     .catch((err) => {
-      console.log('Error with fetching pledge options', err);
+      if (err === 'does not exist') {
+        res.status(400).json('Project does not exist');
+      } else if (typeof req.params.itemId !== 'number') {
+        res.status(400).json('Invalid project id');
+      } else {
+        res.status(500).json(err);
+      }
     });
 });
 
