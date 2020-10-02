@@ -1,12 +1,13 @@
 const express = require('express');
 const app = express();
 const port = 3003;
-const db = require('../db');
+const db = require('../db/index.js');
+const models = require('../db/models.js');
 
 app.use(express.static('client/dist'));
 
 app.get('/project-owner/:itemId', (req, res) => {
-  db.fetchProjectOwner(req.params.itemId)
+  models.fetchProjectOwner(req.params.itemId)
     .then((owner) => {
       if (!owner) {
         throw 'does not exist';
@@ -26,7 +27,7 @@ app.get('/project-owner/:itemId', (req, res) => {
 });
 
 app.get('/pledge-options/:itemId', (req, res) => {
-  db.fetchPledgeOptions(req.params.itemId)
+  models.fetchPledgeOptions(req.params.itemId)
     .then((options) => {
       if (!options) {
         throw 'does not exist';
