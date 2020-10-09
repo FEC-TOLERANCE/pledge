@@ -27,6 +27,9 @@ function generateProjectOwners() {
       }
 
       return Promise.all(owners);
+    })
+    .catch((err) => {
+      console.log('Error with seeding project owners', err);
     });
 }
 
