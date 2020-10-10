@@ -2,6 +2,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const axios = require('axios');
 import ProjectOwner from './components/ProjectOwner.jsx';
+import PledgeOption from './components/PledgeOption.jsx';
 
 class Pledge extends React.Component {
   constructor(props) {
@@ -13,13 +14,15 @@ class Pledge extends React.Component {
         backed: 0,
         aboutMe: 'About Me'
       },
-      options: {}
+      options: []
     }
     this.fetchOwner = this.fetchOwner.bind(this);
+    this.fetchOptions = this.fetchOptions.bind(this);
   }
 
   componentDidMount() {
     this.fetchOwner(1);
+    this.fetchOptions(1);
   }
 
   fetchOwner(itemId) {
@@ -36,10 +39,23 @@ class Pledge extends React.Component {
       });
   }
 
+  fetchOptions(itemId) {
+    axios.get(`pledge-options/${itemId}`)
+      .then((result) => {
+        console.log(result.data.options);
+        this.setState({options: result.data.options});
+      });
+  }
+
   render() {
     return (
       <div id="pledge-sidebar">
         <ProjectOwner owner={this.state.owner}/>
+        <h2>Support</h2>
+        <div className="pledge-option">
+          <h3 className="pledge-option-heading">Pledge without a reward</h3>
+        </div>
+        {this.state.options.map((option) => <PledgeOption option={option} />)}
       </div>
     )
   }
