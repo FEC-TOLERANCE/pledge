@@ -21,12 +21,13 @@ class Pledge extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchOwner(1);
-    this.fetchOptions(1);
+    let itemId = window.location.pathname.slice(1);
+    this.fetchOwner(itemId);
+    this.fetchOptions(itemId);
   }
 
   fetchOwner(itemId) {
-    axios.get(`project-owner/${itemId}`)
+    axios.get(`http://localhost:3003/project-owner/${itemId}`)
       .then((result) => {
         this.setState({
           owner: {
@@ -40,9 +41,8 @@ class Pledge extends React.Component {
   }
 
   fetchOptions(itemId) {
-    axios.get(`pledge-options/${itemId}`)
+    axios.get(`http://localhost:3003/pledge-options/${itemId}`)
       .then((result) => {
-        console.log(result.data.options);
         this.setState({options: result.data.options});
       });
   }
