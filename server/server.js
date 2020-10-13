@@ -1,14 +1,12 @@
 const express = require('express');
 const app = express();
-const port = 3003;
+const port = 3009;
 const db = require('../db/index.js');
 const models = require('../db/models.js');
+const cors = require('cors');
 
-app.use('/:itemId', express.static('client/dist'));
-
-// app.get('/:itemId', (req, res) => {
-
-// })
+app.use(cors());
+app.use(express.static('client/dist'));
 
 app.get('/project-owner/:itemId', (req, res) => {
   models.fetchProjectOwner(req.params.itemId)
