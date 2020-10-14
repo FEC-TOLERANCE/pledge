@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 const models = require('../db/models');
 const axios = require('axios');
 const databaseName = 'test';
+const React = require('react');
+// import { shallow, mount, render } from 'enzyme';
+// import Pledge from '../client/src/index.jsx';
 
 describe('Database functions', () => {
 
@@ -119,3 +122,16 @@ describe('API routes', () => {
     expect(res.status).toBe(400);
   });
 });
+
+// describe('Dynamic rendering with URL', () => {
+
+//   it ('should update project owner information based on project id when the url changes', () => {
+
+//     document.body.innerHTML = `<div id="pledge"></div>`;
+//     const wrapper = shallow(<Pledge />);
+//     expect(wrapper).toBe('something');
+//     // document.body.innerHTML = `<div id="pledge">`
+//     // const name = document.getElementById('pledge');
+//     // expect(name).toBe('something');
+//   });
+// });
