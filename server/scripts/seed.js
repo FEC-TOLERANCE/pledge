@@ -1,11 +1,12 @@
 const faker = require('faker');
-const db = require('../../db');
+const db = require('../../db/index');
+const models = require('../../db/models')
 
 function generateProjectOwners() {
   let owners = [];
   const names = ['John Dryden', 'Samuel Pepys', 'John Bunyan', 'John Locke', 'Isaac Newton', 'Samuel Butler', 'John Wilmot', 'Aphra Behn', 'William Congreve', 'Mary Astell', 'Daniel Defoe', 'Anne Finch', 'Henry Fielding', 'Matthew Prior', 'Stephen Duck', 'Mary Collier', 'Mary Barber', 'Mary Jones', 'Lawrence Sterne', 'Thomas Chatterton'];
 
-  return db.emptyProjectOwners()
+  return models.emptyProjectOwners()
     .then(() => {
       for (let i = 1; i <= names.length; i++) {
         let owner = {
@@ -23,7 +24,7 @@ function generateProjectOwners() {
           j++;
         }
 
-        owners.push(db.addProjectOwner(owner));
+        owners.push(models.addProjectOwner(owner));
       }
 
       return Promise.all(owners);
@@ -36,7 +37,7 @@ function generateProjectOwners() {
 function generatePledgeOptions() {
   let options = [];
 
-  return db.emptyPledgeOptions()
+  return models.emptyPledgeOptions()
     .then(() => {
       for (let i = 1; i <= 100; i++) {
         let option = {
@@ -44,7 +45,7 @@ function generatePledgeOptions() {
           options: generateOptions()
         }
 
-        options.push(db.addPledgeOption(option));
+        options.push(models.addPledgeOption(option));
       }
 
       return Promise.all(options);
