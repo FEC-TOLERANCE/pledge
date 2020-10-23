@@ -15,11 +15,13 @@ const PledgeOption = (props) => {
       <ul>
         {props.option.rewardDetail.map((detail) => <li>{detail}</li>)}
       </ul>
-      <p className="subheading-caps">Estimated Delivery</p>
-      <p>{props.option.estimatedDelivery}</p>
-      <p className="subheading-caps">Ships To</p>
-      <p>{location}</p>
-      <p className="subhead">{props.option.pledgeBackers} backers</p>
+      <div className="delivery-shipping">
+        <p className="subheading-caps">Estimated Delivery</p>
+        <p>{props.option.estimatedDelivery}</p>
+        <p className="subheading-caps">Ships To</p>
+        <p>{location}</p>
+      </div>
+      <p className="subheading-caps">{props.option.pledgeBackers} backers</p>
     </div>
   )
 }

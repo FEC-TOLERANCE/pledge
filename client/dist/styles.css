@@ -1,4 +1,147 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 #pledge {
-  display: grid;
-  grid-template-columns: 1fr;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-bottom: 20px;
+  padding-left: 60px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/**** PROJECT OWNER *****/
+
+#project-owner {
+  border: 0.1rem solid #DCDEDD;
+  width: 100%;
+  font-weight: 300;
+  padding-top: 5.4rem;
+  padding: 1.8rem;
+  margin-bottom: 2.0rem;
+  text-align: left;
+  display: block;
+  box-sizing: border-box;
+}
+
+.project-owner-name {
+  font-weight: 500;
+  font-size: 1.0rem;
+  line-height: 1.5rem;
+  box-sizing: inherit;
+}
+
+.project-owner-backed-created {
+  margin-bottom: 1.4rem;
+  box-sizing: inherit;
+}
+
+#project-owner p {
+  font-size: 0.85rem;
+  line-height: 1.25rem;;
+}
+
+/**** PLEDGE OPTIONS ****/
+
+#pledge h2 {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+.pledge-option {
+  margin-bottom: 20px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border: 1px solid #DCDEDD;
+  padding-bottom: 20px;
+}
+
+.pledge-option h3 {
+  margin: 0px 20px;
+  padding: 20px 0px;
+  font-weight: 300;
+  font-size: 1.0rem;
+}
+
+.pledge-option h4 {
+  box-sizing: border-box;
+  font-weight: 500;
+  margin: 0px 20px 20px 20px;
+  font-size: 0.9rem;
+}
+
+.pledge-option p {
+  box-sizing: border-box;
+  font-weight: 300;
+  margin: 0px 20px 20px 20px;
+  font-size: 0.85rem;
+}
+
+.subheading-caps {
+  text-transform: uppercase;
+  font-size: 0.6rem !important;
+  letter-spacing: 1.3px;
+  margin-bottom: 7px !important;
+}
+
+.pledge-option ul {
+  box-sizing: border-box;
+  margin: 0px 20px 20px 40px;
+  list-style: disc inside;
+}
+
+.pledge-option li {
+  font-weight: 300;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
 }
