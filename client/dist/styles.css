@@ -98,12 +98,13 @@ table {
   line-height: 30px;
 }
 
-.pledge-option {
+.option-container {
   margin-bottom: 20px;
   font-size: 14px;
   box-sizing: border-box;
   border: 1px solid #DCDEDD;
   padding-bottom: 20px;
+  position: relative;
 }
 
 .pledge-option h3 {
@@ -169,4 +170,26 @@ table {
 .delivery-shipping p:last-child {
   grid-column: 2;
   grid-row: 2;
+}
+
+.select-option-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,158,116,0.9);
+  opacity: 0;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option-container:hover .select-option-overlay {
+  opacity: 1;
+  cursor: pointer;
 }

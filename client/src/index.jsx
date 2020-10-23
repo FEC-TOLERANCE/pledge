@@ -58,8 +58,10 @@ class Pledge extends React.Component {
       <div id="pledge-sidebar">
         <ProjectOwner owner={this.state.owner}/>
         <h2>Support</h2>
-        <div className="pledge-option">
-          <h3 className="pledge-option-heading">Pledge without a reward</h3>
+        <div className="option-container">
+          <div className="pledge-option">
+            <h3 className="pledge-option-heading">Pledge without a reward</h3>
+          </div>
         </div>
         {this.state.options.map((option) => <PledgeOption option={option} />)}
       </div>
