@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const projectOwnerSchema = new mongoose.Schema({
   name: String,
+  iconUrl: String,
   created: Number,
   backed: Number,
   aboutMe: String,
@@ -14,6 +15,7 @@ const pledgeOptionsSchema = new mongoose.Schema({
     {
       tier: Number,
       reward: String,
+      rewardDesc: String,
       rewardDetail: [String],
       estimatedDelivery: Date,
       shippingLocation: String,
@@ -28,6 +30,7 @@ const PledgeOptions = mongoose.model('Pledge Options', pledgeOptionsSchema);
 const addProjectOwner = (obj) => {
   let newOwner = new ProjectOwner({
     name: obj.name,
+    iconUrl: obj.iconUrl,
     created: obj.created,
     backed: obj.backed,
     aboutMe: obj.aboutMe,

@@ -10,6 +10,7 @@ class Pledge extends React.Component {
     this.state = {
       owner: {
         name: 'Name',
+        iconUrl: 'https://images.pexels.com/photos/2988589/pexels-photo-2988589.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
         created: 0,
         backed: 0,
         aboutMe: 'About Me'
@@ -32,6 +33,7 @@ class Pledge extends React.Component {
         this.setState({
           owner: {
             name: result.data.name,
+            iconUrl: result.data.iconUrl,
             created: result.data.created,
             backed: result.data.backed,
             aboutMe: result.data.aboutMe
@@ -58,10 +60,23 @@ class Pledge extends React.Component {
       <div id="pledge-sidebar">
         <ProjectOwner owner={this.state.owner}/>
         <h2>Support</h2>
-        <div className="pledge-option">
-          <h3 className="pledge-option-heading">Pledge without a reward</h3>
+        <div className="option-container">
+          <div className="pledge-option">
+            <h3 className="pledge-option-heading">Pledge without a reward</h3>
+            <div className="no-reward-form">
+              <div className="currency-box grey-text">
+                <span>$</span>
+              </div>
+              <input type="text" defaultValue="10" className="no-reward-input" name="backing-amount" placeholder="Pledge any amount"></input>
+            </div>
+            <div className="no-reward-desc">
+              <h3>Back it because you believe in it.</h3>
+              <p>Support the project for no reward, just because it speaks to you.</p>
+            </div>
+            <button className="no-reward-submit">Continue</button>
+          </div>
         </div>
-        {this.state.options.map((option) => <PledgeOption option={option} />)}
+        {this.state.options.map((option) => <PledgeOption key={option.tier} option={option} />)}
       </div>
     )
   }
