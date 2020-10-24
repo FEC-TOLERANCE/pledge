@@ -1,7 +1,10 @@
 const React = require('react');
 
 const PledgeOption = (props) => {
+  const months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
   let location = 'Only certain countries';
+  let date = `${months[Number(props.option.estimatedDelivery.slice(5, 7)) - 1]} ${props.option.estimatedDelivery.slice(0, 4)}`;
+
   if (props.option.shippingLocation) {
     location = 'Anywhere in the world'
   }
@@ -18,7 +21,7 @@ const PledgeOption = (props) => {
         </ul>
         <div className="delivery-shipping">
           <p className="subheading-caps grey-text">Estimated Delivery</p>
-          <p>{props.option.estimatedDelivery}</p>
+          <p>{date}</p>
           <p className="subheading-caps">Ships To</p>
           <p>{location}</p>
         </div>
