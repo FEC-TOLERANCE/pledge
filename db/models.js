@@ -14,6 +14,7 @@ const pledgeOptionsSchema = new mongoose.Schema({
     {
       tier: Number,
       reward: String,
+      rewardDesc: String,
       rewardDetail: [String],
       estimatedDelivery: Date,
       shippingLocation: String,

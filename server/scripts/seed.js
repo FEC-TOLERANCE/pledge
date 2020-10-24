@@ -60,6 +60,7 @@ function generateOptions() {
     let option = {
       tier: Math.floor(Math.random() * 1000),
       reward: faker.lorem.sentence(),
+      rewardDesc: faker.lorem.paragraph(),
       rewardDetail: [],
       pledgeBackers: Math.floor(Math.random() * 20)
     }

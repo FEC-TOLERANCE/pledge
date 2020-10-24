@@ -65,9 +65,9 @@ class Pledge extends React.Component {
               <div className="currency-box">
                 <span>$</span>
               </div>
-              <input type="text" value="10" className="no-reward-input" name="backing-amount" placeholder="Pledge any amount"></input>
+              <input type="text" defaultValue="10" className="no-reward-input" name="backing-amount" placeholder="Pledge any amount"></input>
             </div>
-            <div class="no-reward-desc">
+            <div className="no-reward-desc">
               <h3>Back it because you believe in it.</h3>
               <p>Support the project for no reward, just because it speaks to you.</p>
             </div>
