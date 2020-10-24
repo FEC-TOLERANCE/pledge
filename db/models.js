@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const projectOwnerSchema = new mongoose.Schema({
   name: String,
+  iconUrl: String,
   created: Number,
   backed: Number,
   aboutMe: String,
@@ -29,6 +30,7 @@ const PledgeOptions = mongoose.model('Pledge Options', pledgeOptionsSchema);
 const addProjectOwner = (obj) => {
   let newOwner = new ProjectOwner({
     name: obj.name,
+    iconUrl: obj.iconUrl,
     created: obj.created,
     backed: obj.backed,
     aboutMe: obj.aboutMe,

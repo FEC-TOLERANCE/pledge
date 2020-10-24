@@ -11,6 +11,7 @@ function generateProjectOwners() {
       for (let i = 1; i <= names.length; i++) {
         let owner = {
           name: names[i - 1],
+          iconUrl: faker.image.avatar(),
           created: Math.floor(Math.random() * 5),
           backed: Math.floor(Math.random() * 5),
           aboutMe: faker.lorem.paragraph(),

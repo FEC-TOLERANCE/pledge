@@ -10,6 +10,7 @@ class Pledge extends React.Component {
     this.state = {
       owner: {
         name: 'Name',
+        iconUrl: 'https://images.pexels.com/photos/2988589/pexels-photo-2988589.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
         created: 0,
         backed: 0,
         aboutMe: 'About Me'
@@ -29,9 +30,11 @@ class Pledge extends React.Component {
   fetchOwner(itemId) {
     axios.get(`http://localhost:3003/project-owner/${itemId}`)
       .then((result) => {
+        console.log(result.data.iconUrl);
         this.setState({
           owner: {
             name: result.data.name,
+            iconUrl: result.data.iconUrl,
             created: result.data.created,
             backed: result.data.backed,
             aboutMe: result.data.aboutMe
