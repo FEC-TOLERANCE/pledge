@@ -17,7 +17,7 @@ const PledgeOption = (props) => {
         <p className="reward-desc grey-text">{props.option.rewardDesc}</p>
         <p className="subheading-caps grey-text">Includes:</p>
         <ul>
-          {props.option.rewardDetail.map((detail) => <li>{detail}</li>)}
+          {props.option.rewardDetail.map((detail) => <li key={detail.replace(' ', '')}>{detail}</li>)}
         </ul>
         <div className="delivery-shipping">
           <p className="subheading-caps grey-text">Estimated Delivery</p>

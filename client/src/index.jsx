@@ -76,7 +76,7 @@ class Pledge extends React.Component {
             <button className="no-reward-submit">Continue</button>
           </div>
         </div>
-        {this.state.options.map((option) => <PledgeOption option={option} />)}
+        {this.state.options.map((option) => <PledgeOption key={option.tier} option={option} />)}
       </div>
     )
   }
