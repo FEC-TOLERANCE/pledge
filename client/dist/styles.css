@@ -269,3 +269,8 @@ table {
 .no-reward-submit:hover {
   background-color: #015738;
 }
+
+/*** GENERAL ***/
+.grey-text {
+  color: #656969;
+}
