@@ -11,7 +11,7 @@ const PledgeOption = (props) => {
       <div className="pledge-option">
         <h3>Pledge ${props.option.tier} or more</h3>
         <h4>{props.option.reward}</h4>
-        <p>[reward-desc]</p>
+        <p className="reward-desc">{props.option.rewardDesc}</p>
         <p className="subheading-caps">Includes:</p>
         <ul>
           {props.option.rewardDetail.map((detail) => <li>{detail}</li>)}

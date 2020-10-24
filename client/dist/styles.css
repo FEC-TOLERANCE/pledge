@@ -128,6 +128,10 @@ table {
   font-size: 0.85rem;
 }
 
+.reward-desc {
+  line-height: 16px;
+}
+
 .subheading-caps {
   text-transform: uppercase;
   font-size: 0.6rem !important;
