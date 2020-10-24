@@ -66,10 +66,21 @@ table {
   font-weight: 300;
   padding-top: 5.4rem;
   padding: 1.8rem;
+  margin-top: 3.0rem;
   margin-bottom: 2.0rem;
   text-align: left;
   display: block;
   box-sizing: border-box;
+}
+
+.project-owner-icon {
+  border-radius: 50%;
+  height: 80px;
+  margin: -73px 0 20px 0;
+  display: block;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .project-owner-name {

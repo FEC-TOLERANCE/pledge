@@ -30,7 +30,6 @@ class Pledge extends React.Component {
   fetchOwner(itemId) {
     axios.get(`http://localhost:3003/project-owner/${itemId}`)
       .then((result) => {
-        console.log(result.data.iconUrl);
         this.setState({
           owner: {
             name: result.data.name,
