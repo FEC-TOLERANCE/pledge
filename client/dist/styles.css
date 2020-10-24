@@ -193,3 +193,64 @@ table {
   opacity: 1;
   cursor: pointer;
 }
+
+/*** NO REWARD PLEDGE ***/
+.no-reward-form {
+  border: 1px solid #DCDEDD;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  box-sizing: border-box;
+  margin: 0px 20px 20px 20px;
+}
+
+.currency-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  font-weight: 300;
+  font-size: 0.7rem;
+}
+
+.no-reward-input {
+  border-left: 1px solid #DCDEDD;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  width: 80%;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+.no-reward-desc {
+  border-color: #DBE7FF;
+  color: #222222;
+  box-sizing: border-box;
+  margin: 0 20px 20px 20px;
+  background-image: -webkit-linear-gradient(top, #DBE7FF, #FFF2EC);
+  padding-bottom: 5px;
+}
+
+.no-reward-desc h3 {
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin: 0 15px;
+}
+
+.no-reward-desc p {
+  line-height: 20px;
+}
+
+.no-reward-submit {
+  box-sizing: border-box;
+  border: none;
+  background-color: #028858;
+  color: white;
+  margin: 0 auto;
+  padding: 0.9rem 25%;
+  display: block;
+}
+
+.no-reward-submit:hover {
+  background-color: #015738;
+}

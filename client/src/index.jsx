@@ -61,6 +61,17 @@ class Pledge extends React.Component {
         <div className="option-container">
           <div className="pledge-option">
             <h3 className="pledge-option-heading">Pledge without a reward</h3>
+            <div className="no-reward-form">
+              <div className="currency-box">
+                <span>$</span>
+              </div>
+              <input type="text" value="10" className="no-reward-input" name="backing-amount" placeholder="Pledge any amount"></input>
+            </div>
+            <div class="no-reward-desc">
+              <h3>Back it because you believe in it.</h3>
+              <p>Support the project for no reward, just because it speaks to you.</p>
+            </div>
+            <button className="no-reward-submit">Continue</button>
           </div>
         </div>
         {this.state.options.map((option) => <PledgeOption option={option} />)}
