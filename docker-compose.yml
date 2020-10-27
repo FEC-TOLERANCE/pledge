@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+ notes:
+  build:
+    context: .
+  ports:
+    - 3003:3003
+  environment:
+    - SERVER_PORT=3003
+    - DATABASE_CONNECTIONSTRING=mongodb://mongo:27017/pledge
+  volumes:
+    - .:/pledge
+  links:
+    - mongo
+
+ mongo:
+  image: mongo:latest
+  ports:
+    - 27017:27017
+  volumes:
+    - mongodb:/data/db
+    - mongodb_config:/data/configdb
+    - ./docker-entrypoint-initdb.d/mongo-seed.js:/docker-entrypoint-initdb.d/mongo-seed.js:ro
+  environment:
+    MONGO_INITDB_DATABASE: pledge
+
+volumes:
+  mongodb:
+  mongodb_config:
