@@ -1,6 +1,6 @@
 const faker = require('faker');
-const db = require('../../db/index');
-const models = require('../../db/models')
+const db = require('../../../db/index');
+const models = require('../../../db/models')
 
 function generateProjectOwners() {
   let owners = [];

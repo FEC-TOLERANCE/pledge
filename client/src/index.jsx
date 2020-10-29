@@ -10,7 +10,7 @@ class Pledge extends React.Component {
     this.state = {
       owner: {
         name: 'Name',
-        iconUrl: 'https://images.pexels.com/photos/2988589/pexels-photo-2988589.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+        iconUrl: 'https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
         created: 0,
         backed: 0,
         aboutMe: 'About Me'
@@ -28,7 +28,7 @@ class Pledge extends React.Component {
   }
 
   fetchOwner(itemId) {
-    axios.get(`http://localhost:3003/project-owner/${itemId}`)
+    axios.get(`http://ec2-3-15-177-95.us-east-2.compute.amazonaws.com:3003/project-owner/${itemId}`)
       .then((result) => {
         this.setState({
           owner: {
@@ -46,7 +46,7 @@ class Pledge extends React.Component {
   }
 
   fetchOptions(itemId) {
-    axios.get(`http://localhost:3003/pledge-options/${itemId}`)
+    axios.get(`http://ec2-3-15-177-95.us-east-2.compute.amazonaws.com:3003/pledge-options/${itemId}`)
       .then((result) => {
         this.setState({options: result.data.options});
       })
