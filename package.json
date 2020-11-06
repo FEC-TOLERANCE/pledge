@@ -11,7 +11,8 @@
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/server.js",
     "seed-data": "node server/scripts/seed.js",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "production-mode": "webpack --mode production"
   },
   "dependencies": {
     "axios": "^0.20.0",
