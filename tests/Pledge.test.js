@@ -15,6 +15,6 @@ describe("Pledge component", () => {
 
     expect(wrapper.exists()).toBe(true);
     expect(wrapper.find(ProjectOwner)).toHaveLength(1);
-    // expect(wrapper.find('PledgeOption')).toHaveLength(4);
+    expect(wrapper.containsMatchingElement(<PledgeOption />)).toEqual(false);
   });
 });
